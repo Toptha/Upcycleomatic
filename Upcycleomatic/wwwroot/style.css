@@ -1,0 +1,31 @@
+body {
+    font-family: Segoe UI, sans-serif;
+    background: #202020;
+    color: white;
+    padding: 20px;
+}
+
+h1 {
+    color: #66ffcc;
+}
+
+input {
+    padding: 8px;
+    margin: 5px;
+    width: 180px;
+}
+
+button {
+    padding: 8px 14px;
+    background: #66ffcc;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+ul li {
+    margin: 10px 0;
+    background: #303030;
+    padding: 10px;
+    border-radius: 5px;
+}

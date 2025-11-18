@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Upcycle-O-Matic</title>
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+    <div class="wrap">
+        <header class="hero">
+            <div class="brand">
+                <div class="logo">♻️</div>
+                <div>
+                    <h1>Upcycle-O-Matic</h1>
+                    <p class="sub">Turn trash into treasure — quick & clever ideas.</p>
+                </div>
+            </div>
+
+            <nav class="cta">
+                <button id="loginBtn" class="btn primary">Log in</button>
+                <button id="signupBtn" class="btn ghost">Sign up</button>
+            </nav>
+        </header>
+
+        <main class="features">
+            <section class="card">
+                <h2>Instant ideas</h2>
+                <p>Enter a material and get a DIY idea in seconds.</p>
+            </section>
+            <section class="card">
+                <h2>Save & share</h2>
+                <p>Keep favourites, export JSON, and share with friends.</p>
+            </section>
+            <section class="card">
+                <h2>Community</h2>
+                <p>Contribute your own creative upcycles and inspire others.</p>
+            </section>
+        </main>
+
+        <footer class="foot">
+            <small>Made with ♻️ & coffee • Upcycle-O-Matic</small>
+        </footer>
+    </div>
+
+    <script>
+        function post(obj) {
+            if (window.chrome && chrome.webview) chrome.webview.postMessage(JSON.stringify(obj));
+            else console.log("no bridge", obj);
+        }
+
+        document.getElementById('loginBtn').addEventListener('click', () => post({ action: 'openLogin' }));
+        document.getElementById('signupBtn').addEventListener('click', () => post({ action: 'openSignup' }));
+
+        // allow host to notify auth status
+        if (window.chrome && chrome.webview) {
+            chrome.webview.addEventListener('message', ev => {
+                try {
+                    const data = JSON.parse(ev.data);
+                    if (data && data.type === 'auth' && data.status === 'ok') {
+                        // go to main app
+                        window.location.href = 'app.html';
+                    }
+                } catch (e) { }
+            });
+        }
+    </script>
+</body>
+</html>

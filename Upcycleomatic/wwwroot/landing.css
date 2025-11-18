@@ -1,0 +1,126 @@
+:root {
+    --wheat: #f5deb3; /* wheat-ish */
+    --olive: #556b2f; /* olive green */
+    --card: #fffaf0;
+    --muted: #666;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Segoe UI, system-ui, Arial;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(180deg, #fbf7ef 0%, var(--wheat) 100%);
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+}
+
+.wrap {
+    max-width: 1100px;
+    width: 100%;
+    background: rgba(255,255,255,0.9);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.brand {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    background: var(--olive);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 28px;
+}
+
+h1 {
+    color: var(--olive);
+    font-size: 36px;
+    margin: 0;
+}
+
+.sub {
+    color: var(--muted);
+    margin-top: 6px;
+}
+
+.cta {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 0;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.primary {
+    background: var(--olive);
+    color: #fff;
+}
+
+.ghost {
+    background: transparent;
+    color: var(--olive);
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.card {
+    background: var(--card);
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(85,107,47,0.05);
+}
+
+    .card h2 {
+        margin: 0 0 8px 0;
+        color: var(--olive);
+    }
+
+.foot {
+    margin-top: 18px;
+    color: var(--muted);
+    text-align: center;
+}
+
+@media(max-width:900px) {
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
