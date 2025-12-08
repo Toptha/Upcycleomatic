@@ -1,0 +1,102 @@
+/* ==============================
+   LOGIN PAGE — Wheat + Olive
+   ============================== */
+
+:root {
+    --bg-main: #F5DEB3; /* wheat */
+    --text-main: #556B2F; /* olive green */
+    --accent: #6B8E23; /* olive drab */
+    --accent-hover: #556B2F;
+    --card-bg: rgba(255, 255, 255, 0.65);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: Segoe UI, sans-serif;
+}
+
+.container {
+    width: 360px;
+    padding: 36px;
+    margin: auto;
+    margin-top: 60px;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--text-main);
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 2px solid var(--text-main);
+    background: rgba(255,255,255,0.7);
+    color: var(--text-main);
+    outline: none;
+    font-size: 15px;
+}
+
+    .form input::placeholder {
+        color: #7D8F69;
+    }
+
+.form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: none;
+    background: var(--accent);
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+
+    .form button:hover {
+        background: var(--accent-hover);
+    }
+
+.small {
+    font-size: 12px;
+    margin-top: 12px;
+    color: #6A7C57;
+}
+
+.msg {
+    height: 20px;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+    .msg.err {
+        color: #B22222;
+    }
+
+    .msg.ok {
+        color: #3A6F2D;
+    }

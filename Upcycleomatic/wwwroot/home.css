@@ -1,0 +1,84 @@
+/* ==============================
+   HOME DASHBOARD — Wheat + Olive
+   ============================== */
+
+:root {
+    --bg-main: #F5DEB3; /* wheat */
+    --text-main: #556B2F; /* olive green */
+    --accent: #6B8E23; /* olive drab */
+    --card-bg: rgba(255, 255, 255, 0.7);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: Segoe UI, sans-serif;
+}
+
+/* Top bar */
+.topbar {
+    background: var(--accent);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .topbar h1 {
+        margin: 0;
+        color: white;
+    }
+
+.logout {
+    padding: 8px 16px;
+    background: white;
+    color: var(--accent);
+    border: none;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+    .logout:hover {
+        background: var(--text-main);
+        color: white;
+    }
+
+/* Wrap */
+.wrap {
+    padding: 28px;
+}
+
+.sub {
+    color: #6A7C57;
+    margin-bottom: 18px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+    .card h3 {
+        margin: 0 0 6px;
+        color: var(--text-main);
+    }
+
+    .card p {
+        margin: 0;
+        color: #6A7C57;
+    }

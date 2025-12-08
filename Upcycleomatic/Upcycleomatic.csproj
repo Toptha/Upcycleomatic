@@ -6,20 +6,38 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="wwwroot\app.html" />
+    <None Remove="wwwroot\home.css" />
+    <None Remove="wwwroot\home.html" />
     <None Remove="wwwroot\index.html" />
     <None Remove="wwwroot\landing.css" />
+    <None Remove="wwwroot\login.css" />
+    <None Remove="wwwroot\login.html" />
     <None Remove="wwwroot\style.css" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="logo.ico" />
+    <Content Include="wwwroot\home.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\home.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="wwwroot\index.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="wwwroot\landing.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\login.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\login.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="wwwroot\style.css">

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Login � Upcycleomatic</title>
+    <link rel="stylesheet" href="/login.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="brand">Upcycleomatic</div>
+        <h2>Welcome back</h2>
+
+        <div class="form">
+            <input id="email" type="email" placeholder="Email" autocomplete="username">
+            <input id="password" type="password" placeholder="Password" autocomplete="current-password">
+            <button id="btnLogin">Login</button>
+            <div id="msg" class="msg"></div>
+        </div>
+    </div>
+
+    <script>
+    const btn = document.getElementById('btnLogin');
+    const msg = document.getElementById('msg');
+
+    btn.addEventListener('click', () => {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (!email || !password) {
+        msg.textContent = 'Please enter email and password.';
+        msg.classList.add('err');
+        return;
+      }
+
+      // Send credentials to host for validation
+      const payload = {
+        type: 'login',
+        email: email,
+        password: password
+      };
+
+      // Post the message to host (C#)
+      window.chrome?.webview?.postMessage(JSON.stringify(payload));
+    });
+
+    // Listen for host responses (optional)
+    window.chrome?.webview?.addEventListener('message', (ev) => {
+      try {
+        const data = typeof ev === 'string' ? JSON.parse(ev) : (ev.data ? ev.data : ev);
+        if (data?.type === 'login_result') {
+          if (data.ok) {
+            // handled by host (it opens Form3). Optionally show a subtle animation.
+            msg.textContent = 'Login successful';
+            msg.classList.remove('err');
+            msg.classList.add('ok');
+          } else {
+            msg.textContent = 'Invalid email or password.';
+            msg.classList.add('err');
+          }
+        }
+      } catch (e) { /* ignore parse errors */ }
+    });
+    </script>
+</body>
+</html>

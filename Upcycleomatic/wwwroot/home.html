@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dashboard — Upcycle-O-Matic</title>
+    <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+
+    <div class="topbar">
+        <h1>Dashboard</h1>
+        <button id="logoutBtn" class="logout">Logout</button>
+    </div>
+
+    <div class="wrap">
+        <header>
+            <p class="sub">Welcome to your upcycling hub.</p>
+        </header>
+
+        <section class="cards">
+            <div class="card">
+                <h3>Ideas</h3>
+                <p>Generate upcycle ideas instantly.</p>
+            </div>
+
+            <div class="card">
+                <h3>Saved Projects</h3>
+                <p>Your saved DIY creations.</p>
+            </div>
+
+            <div class="card">
+                <h3>Profile</h3>
+                <p>Update your preferences.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function post(obj) {
+            chrome.webview.postMessage(JSON.stringify(obj));
+        }
+
+        document.getElementById("logoutBtn").onclick = () => {
+            post({ action: "logout" });
+        };
+    </script>
+
+</body>
+</html>
