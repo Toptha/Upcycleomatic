@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Login � Upcycleomatic</title>
-    <link rel="stylesheet" href="/login.css" />
+    <link rel="stylesheet" href="login.css" />
 </head>
 <body>
     <div class="container">
@@ -61,6 +61,11 @@
         }
       } catch (e) { /* ignore parse errors */ }
     });
+
+        window.addEventListener("message", e => {
+            if (e.data === "dark") document.body.classList.add("dark");
+            if (e.data === "light") document.body.classList.remove("dark");
+        });
     </script>
 </body>
 </html>

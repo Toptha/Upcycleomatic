@@ -19,7 +19,7 @@ namespace Upcycleomatic
 
         private async void Form2_Load(object sender, EventArgs e)
         {
-
+            SessionManager.Instance.ApplyTheme(this);
             await webView21.EnsureCoreWebView2Async();
 
             string rootPath = Path.Combine(Application.StartupPath, "wwwroot");

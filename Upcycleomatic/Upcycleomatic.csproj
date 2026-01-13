@@ -17,6 +17,9 @@
     <None Remove="wwwroot\landing.css" />
     <None Remove="wwwroot\login.css" />
     <None Remove="wwwroot\login.html" />
+    <None Remove="wwwroot\settings.css" />
+    <None Remove="wwwroot\settings.html" />
+    <None Remove="wwwroot\settings.js" />
     <None Remove="wwwroot\style.css" />
   </ItemGroup>
 
@@ -38,6 +41,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="wwwroot\login.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\settings.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\settings.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\settings.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="wwwroot\style.css">

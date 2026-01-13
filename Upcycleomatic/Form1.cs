@@ -15,6 +15,7 @@ namespace Upcycleomatic
 
         private async void Form1_Load(object sender, EventArgs e)
         {
+            SessionManager.Instance.ApplyTheme(this);
             Directory.CreateDirectory(Path.Combine(Application.StartupPath, "wwwroot", "data"));
             try
             {

@@ -27,6 +27,11 @@
         });
 
         document.getElementById('home').onclick = () => post({ action: 'goHome' });
+        window.addEventListener("message", e => {
+            if (e.data === "dark") document.body.classList.add("dark");
+            if (e.data === "light") document.body.classList.remove("dark");
+        });
     </script>
+
 </body>
 </html>

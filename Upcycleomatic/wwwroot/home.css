@@ -1,12 +1,18 @@
-/* ==============================
-   HOME DASHBOARD — Wheat + Olive
-   ============================== */
 
 :root {
-    --bg-main: #F5DEB3; /* wheat */
-    --text-main: #556B2F; /* olive green */
-    --accent: #6B8E23; /* olive drab */
+    --bg-main: #F5DEB3;
+    --text-main: #556B2F;
+    --accent: #6B8E23;
     --card-bg: rgba(255, 255, 255, 0.7);
+    --subtext: #6A7C57;
+}
+
+body.dark {
+    --bg-main: #1E1F1A;
+    --text-main: #C7D2A4;
+    --accent: #8FAE3C;
+    --card-bg: rgba(40, 44, 30, 0.85);
+    --subtext: #9FA88A;
 }
 
 * {
@@ -19,9 +25,9 @@ body {
     background: var(--bg-main);
     color: var(--text-main);
     font-family: Segoe UI, sans-serif;
+    transition: 0.3s ease;
 }
 
-/* Top bar */
 .topbar {
     background: var(--accent);
     padding: 12px 20px;
@@ -45,18 +51,12 @@ body {
     cursor: pointer;
 }
 
-    .logout:hover {
-        background: var(--text-main);
-        color: white;
-    }
-
-/* Wrap */
 .wrap {
     padding: 28px;
 }
 
 .sub {
-    color: #6A7C57;
+    color: var(--subtext);
     margin-bottom: 18px;
 }
 
@@ -71,6 +71,7 @@ body {
     border-radius: 14px;
     padding: 18px;
     box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    transition: 0.3s ease;
 }
 
     .card h3 {
@@ -80,5 +81,16 @@ body {
 
     .card p {
         margin: 0;
-        color: #6A7C57;
+        color: var(--subtext);
+    }
+
+.link-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+    .link-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 30px rgba(0,0,0,0.3);
     }

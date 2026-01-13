@@ -4,13 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Dashboard — Upcycle-O-Matic</title>
-    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
 
     <div class="topbar">
         <h1>Dashboard</h1>
-        <button id="logoutBtn" class="logout">Logout</button>
+        <button class="logout">Logout</button>
     </div>
 
     <div class="wrap">
@@ -29,21 +29,17 @@
                 <p>Your saved DIY creations.</p>
             </div>
 
-            <div class="card">
+            <a href="settings.html" class="card link-card">
                 <h3>Profile</h3>
                 <p>Update your preferences.</p>
-            </div>
+            </a>
         </section>
     </div>
 
     <script>
-        function post(obj) {
-            chrome.webview.postMessage(JSON.stringify(obj));
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark");
         }
-
-        document.getElementById("logoutBtn").onclick = () => {
-            post({ action: "logout" });
-        };
     </script>
 
 </body>
